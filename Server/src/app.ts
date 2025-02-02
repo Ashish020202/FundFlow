@@ -2,6 +2,7 @@ import express from "express";
 import mongoose from "mongoose";
 import dotenv from "dotenv";
 import cors from "cors";
+import getnavRoutes from "./routes/getNavRoutes"
 
 
 dotenv.config();
@@ -16,7 +17,7 @@ const MONGO_URI = process.env.MONGO_URI ||'';
 
 const PORT = process.env.PORT || 3000;
 
-
+app.use('/api',getnavRoutes)
 
 
 mongoose.connect(MONGO_URI)
