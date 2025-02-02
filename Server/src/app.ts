@@ -12,7 +12,7 @@ app.use(express.json());
 app.use(cors());
 
 const MONGO_URI = process.env.MONGO_URI ||'';
-console.log("uri",MONGO_URI);
+// console.log("uri",MONGO_URI);
 
 const PORT = process.env.PORT || 3000;
 
