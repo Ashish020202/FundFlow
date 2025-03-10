@@ -3,6 +3,7 @@ import mongoose from "mongoose";
 import dotenv from "dotenv";
 import cors from "cors";
 import getnavRoutes from "./routes/getNavRoutes"
+import calNavRoute from "./routes/NAVanalysisRoutes"
 
 
 dotenv.config();
@@ -13,11 +14,12 @@ app.use(express.json());
 app.use(cors());
 
 const MONGO_URI = process.env.MONGO_URI ||'';
-// console.log("uri",MONGO_URI);
+
 
 const PORT = process.env.PORT || 3000;
 
 app.use('/api',getnavRoutes)
+app.use('/api',calNavRoute);
 
 
 mongoose.connect(MONGO_URI)
